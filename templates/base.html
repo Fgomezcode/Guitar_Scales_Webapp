@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keys and Chord Progressions</title>
+    <link rel="stylesheet" href='/static/main.css' />
+</head>
+<body>
+
+<script>
+    let x = 0
+    function load(){ document.getElementById("content").innerHTML =
+        document.getElementById('key-0').innerHTML;
+    }
+
+    function next_key(){
+        x+= 1
+        if(x >= 40){ x = 0; }
+        document.getElementById("content").innerHTML =(
+            document.getElementById('key-'+ x).innerHTML );
+    }
+    function previous_key(){
+        x-= 1
+        if(x < 0){ x = 40; }
+        document.getElementById("content").innerHTML = (
+            document.getElementById('key-'+ x).innerHTML );
+    }
+    window.onload = function() {load();};
+ </script>
+
+
+<div id="base_information">
+
+<h1 id="page_title">KEY AND CHORD PROGRESSION GENERATOR</h1>
+
+<span id="page_info">
+    Enter a <strong>ROOT NOTE</strong> and preferred <strong>TUNING.</strong>
+    You can enter <strong>NATURAL</strong> or <strong>SHARP</strong> notes ( D# not Eb).</span><br><br>
+    <strong>TUNING</strong> can be input as one string 'C#F#BEG#C#' or with spaces 'e a d g b e'.<br><br>
+    Enter tuning from <strong> LOW to HIGH.</strong><br>
+    The <strong>Number of strings</strong> is determined by the instruments tuning.
+    <br><br>
+    This application will generate <strong>41 KEYS and 19 PROGRESSIONS</strong>
+    along with a <strong>FRETBOARD</strong> displays the notes of the current key.
+</div>
+
+
+<form id="user_form" action="/scales" method = "POST">
+    <p>ROOT NOTE:    <input type = "text"  value="C" name = "Root Note" />
+        TUNING:    <input type = "text"  value="EADGBE" name = "Tuning" />
+
+        <input id="submit_button" type = "submit" value = "SUBMIT" /></p>
+</form>
+
+<div id="display-div">
+
+{% block content %}
+
+{% endblock %}
+</div>
+
+<div id="footer_information">
+    <a href="https://www.linkedin.com/in/felipe-gomez-villalobos/">LINKEDin</a>
+    <a href="https://fgomezcode.github.io/">PORTFOLIO</a>
+    <a href="https://github.com/fgomezcode/">GITHUB REPO</a>
+</div>
+
+
+</body>
+</html>

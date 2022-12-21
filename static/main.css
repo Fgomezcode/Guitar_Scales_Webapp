@@ -1,0 +1,140 @@
+body {
+  background: Linen;
+  font-family: "monospace", monospace;
+  font-size: larger;
+  color: darkslategray;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#page_title{
+  text-align: center;
+}
+
+#base_information{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+}
+
+#footer_information{
+  text-align: center;
+
+}
+
+#footer_information> a{
+  color: darkslategray;
+  text-decoration: none;
+}
+#footer_information> a:hover{
+  color: lightcoral;
+  text-decoration: none;
+}
+
+#footer_information> a:hover:visited {
+  color: lightcoral;
+  text-decoration: none;
+}
+
+#footer_information> a:visited{
+  color: darkslategray;
+  text-decoration: none;
+}
+
+#border_div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#content{
+  border-top: solid .5rem black;
+  border-bottom: solid .5rem black;
+}
+
+#content> h2{
+  text-align: center;
+}
+
+#next_button, #previous_button{
+  width: 15%;
+  padding:1rem;
+  background-color: white;
+  font-weight: bolder ;
+}
+
+#next_button{
+  border-top: solid .5rem black;
+  border-right: solid .5rem black;
+  border-bottom: solid .5rem black;
+}
+
+#previous_button{
+  border-top: solid .5rem black;
+  border-left: solid .5rem black;
+  border-bottom: solid .5rem black;
+}
+
+#submit_button{
+  padding:1rem;
+  background-color: white;
+  font-weight: bolder  ;
+}
+
+#user_form{
+  text-align: center;
+  font-weight: bolder;
+}
+
+h3, p{
+  width: 90%;
+}
+
+/*fretboard table--------------------------------*/
+#fretboard{
+  table-layout: fixed;
+}
+
+.ft{
+  border-bottom: solid darkslategray;
+}
+
+.fb{
+  border-top: solid darkslategrey;
+}
+
+.string{
+  text-align: center;
+  width: 7.14%;
+}
+
+/*progressions table----------------------------*/
+#progressions{
+  table-layout: fixed;
+  text-align: left;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+#pdegree{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+#proman{
+  word-spacing: -5px;
+}
+
+.prog{
+  font-size: 12px;
+}
+
+.pt{
+  border-bottom: solid darkslategray;
+  width: fit-content;
+}

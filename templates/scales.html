@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+<!-- form_data[0: main entry]
+                             [0:Title][1:frets][2:strings][3:progs] -->
+
+{% block content %}
+<div id="border_div">
+
+<button id="previous_button" onclick="previous_key()">PREVIOUS</button>
+
+<div id = "content">hey</div>
+
+<button id="next_button" onclick="next_key()">NEXT</button>
+
+{% for i in range(form_data|length) %}
+<div class="key" id= key-{{i}} hidden>
+    <h2>{{form_data[i][0]}}</h2>
+    <h3>FRETBOARD</h3>
+
+    <table id="fretboard">
+        <tr>
+            <th class="ft">STRING</th><th class="ft">0</th><th class="ft">1</th><th class="ft">2</th>
+            <th class="ft">3</th><th class="ft">4</th><th class="ft">5</th><th class="ft">6</th>
+            <th class="ft">7</th><th class="ft">8</th><th class="ft">9</th><th class="ft">10</th>
+            <th class="ft">11</th><th class="ft">12</th>
+        </tr>
+        {% for j in range(form_data[i][2]|length) %}
+        <tr>
+            {% for z in range(form_data[i][2][j]|length) %}
+            <td class="string">{{form_data[i][2][j][z]}}</td>
+            {% endfor%}
+        </tr>
+
+        {% endfor %}
+        <tr>
+            <th class="fb">STRING</th><th class="fb">0</th><th class="fb">1</th><th class="fb">2</th>
+            <th class="fb">3</th><th class="fb">4</th><th class="fb">5</th><th class="fb">6</th>
+            <th class="fb">7</th><th class="fb">8</th><th class="fb">9</th><th class="fb">10</th>
+            <th class="fb">11</th><th class="fb">12</th>
+        </tr>
+        </table>
+
+
+
+    <h3>PROGRESSIONS</h3>
+        <span>ROMAN NUMERALS IN LOWER CASE ARE MINOR CHORDS.</span>
+        <table id="progressions">
+            <tr>
+                <th class="pt" >DEGREE</th>
+                <th class="pt"></th>
+                <th class="pt">NOTES</th>
+
+                <th class="pt">DEGREE</th>
+                <th class="pt"></th>
+                <th class="pt">NOTES</th>
+            </tr>
+
+            <tr class="prog">
+                {% for k in range(form_data[i][3]|length) %}
+                    <td id="pdegree" class="prog">
+                        {{form_data[i][3][k][0]}}
+                    </td>
+                    <td id="proman" class="prog">
+                        {{form_data[i][3][k][1]}}
+                    </td>
+                    <td class="prog">
+                        {{form_data[i][3][k][2]}}
+                    </td>
+                {% if k % 2 == 1 %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+        </table>
+
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}
